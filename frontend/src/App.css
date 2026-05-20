@@ -4,11 +4,236 @@
   padding: 0;
 }
 
+/* =====================================================================
+ *  WebSpatial — Bright theme
+ *  Light page surface, translucent white cards, dark text.
+ *  In WebSpatial mode the room shows through where backgrounds are
+ *  transparent; --xr-background-material renders the native material.
+ * ===================================================================== */
+html {
+  --xr-background-material: transparent;
+  background: transparent;
+}
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  background: #0f1117;
-  color: #e0e0e0;
+  background: linear-gradient(135deg, #f4f7fc 0%, #eef2fb 60%, #f7f0fa 100%);
+  color: #1c1f2a;
 }
+
+.app {
+  background: transparent;
+}
+
+/* ----- Header ----- */
+.app-header {
+  --xr-back: 8px;
+  --xr-background-material: translucent;
+  background: rgba(255, 255, 255, 0.85) !important;
+  border-bottom: 1px solid rgba(28, 31, 42, 0.08) !important;
+}
+
+/* ----- Chart ----- */
+.chart-area {
+  background: transparent;
+  --xr-background-material: transparent;
+}
+
+/* Pure white chart canvas — candlesticks need solid contrast */
+.chart-container {
+  background: #ffffff !important;
+  border-radius: 12px;
+  box-shadow: 0 1px 4px rgba(28, 31, 42, 0.06);
+}
+
+/* ----- Panel containers (transparent — cards inside are the surfaces) ----- */
+.prediction-area,
+.news-area {
+  background: transparent !important;
+  --xr-background-material: transparent;
+  border-color: rgba(28, 31, 42, 0.08) !important;
+}
+
+.news-panel,
+.pred-panel {
+  background: transparent !important;
+}
+
+/* ----- Filter bars (colour-only — no layout-affecting props) ----- */
+.news-category-bar {
+  --xr-background-material: translucent;
+  background: rgba(255, 255, 255, 0.7) !important;
+  border-bottom: 1px solid rgba(28, 31, 42, 0.08) !important;
+}
+
+.news-panel-header {
+  --xr-background-material: translucent;
+  background: rgba(255, 255, 255, 0.6) !important;
+  border-bottom: 1px solid rgba(28, 31, 42, 0.08) !important;
+}
+
+.sentiment-sub-bar {
+  --xr-background-material: translucent;
+  background: rgba(255, 255, 255, 0.6) !important;
+  border-bottom: 1px solid rgba(28, 31, 42, 0.08) !important;
+}
+
+/* ----- Individual cards: ONLY recolour + xr material. -----
+ * No new position / border / box-shadow / backdrop-filter — those
+ * create stacking contexts that re-order paint layers across grid
+ * cells and visually lift news cards on top of the chart.
+ * Layout is otherwise identical to the main branch.
+ */
+.news-card,
+.fc-hero,
+.fc-conclusion,
+.fc-pred-card,
+.fc-impact-card,
+.fc-period-card,
+.fc-similar-stats,
+.fc-keywords-section,
+.sim-target-card,
+.sim-stats-card,
+.sim-day-card,
+.range-price-card,
+.range-section,
+.range-question-card,
+.similar-query-card,
+.similar-stats-card {
+  --xr-background-material: translucent;
+  background: rgba(255, 255, 255, 0.78) !important;
+}
+
+.news-card:hover {
+  background: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Category chips: colour only */
+.category-tag {
+  --xr-background-material: translucent;
+  background: rgba(255, 255, 255, 0.7);
+  border-color: rgba(28, 31, 42, 0.1) !important;
+  color: #2a2d3a !important;
+}
+
+/* Popups & dropdowns — these are already absolute / fixed in the
+ * original CSS (own stacking context), so adding xr lift here is
+ * safe and won't affect the chart's paint order.
+ */
+.range-popup {
+  --xr-back: 80px;
+  --xr-background-material: translucent;
+  background: rgba(255, 255, 255, 0.95) !important;
+  border-color: rgba(28, 31, 42, 0.1) !important;
+  color: #1c1f2a;
+}
+
+.ticker-panel,
+.search-dropdown {
+  --xr-back: 60px;
+  --xr-background-material: translucent;
+  background: rgba(255, 255, 255, 0.96) !important;
+  border-color: rgba(28, 31, 42, 0.12) !important;
+}
+
+/* ----- Text recolor for the bright theme ----- */
+.app-header h1,
+.news-panel-header h2,
+.ohlc-val,
+.range-price,
+.news-title,
+.fc-conclusion,
+.fc-impact-title,
+.fc-deep-discussion,
+.fc-bullet-item,
+.range-summary,
+.range-trend,
+.sim-day-date,
+.sim-feat-val,
+.sim-stat-big,
+.range-question-text,
+.pt-title {
+  color: #1c1f2a !important;
+}
+
+.news-title:hover {
+  color: #4f5fbf !important;
+}
+
+.ohlc-label,
+.ohlc-date,
+.news-publisher,
+.ret-chip,
+.fc-pred-label,
+.fc-pred-meta,
+.fc-driver-name,
+.fc-driver-val,
+.fc-stat-label,
+.sim-feat-label,
+.sim-stat-title,
+.range-dates,
+.range-meta,
+.range-news-dates,
+.news-count,
+.fc-impact-date,
+.fc-keyword-pill,
+.news-summary,
+.fc-impact-summary,
+.fc-news-title,
+.fc-news-summary,
+.sim-day-news-title,
+.pt-meta,
+.range-popup-dates,
+.fc-period-dates,
+.fc-period-detail {
+  color: #586075 !important;
+}
+
+.pred-title,
+.fc-section-title,
+.fc-section-divider,
+.sim-section-label,
+.range-news-section-title,
+.range-section-title {
+  color: #4f5fbf !important;
+}
+
+.search-wrapper input {
+  background: rgba(255, 255, 255, 0.85) !important;
+  border-color: rgba(28, 31, 42, 0.12) !important;
+  color: #1c1f2a !important;
+}
+.search-wrapper input::placeholder { color: #98a0b5 !important; }
+
+.ticker-current {
+  background: rgba(255, 255, 255, 0.8) !important;
+  border-color: rgba(28, 31, 42, 0.12) !important;
+}
+.ticker-current-symbol { color: #1c1f2a !important; }
+
+.ticker-panel-item {
+  background: transparent;
+  border-color: rgba(28, 31, 42, 0.1) !important;
+  color: #2a2d3a !important;
+}
+.ticker-panel-item:hover {
+  background: rgba(102, 126, 234, 0.12) !important;
+}
+
+.pred-tab,
+.find-similar-btn,
+.range-clear-btn,
+.lock-badge,
+.range-news-all-btn,
+.fc-deep-btn {
+  border-color: rgba(28, 31, 42, 0.15) !important;
+  color: #4f5fbf !important;
+  background: rgba(255, 255, 255, 0.55);
+}
+
+/* Header GitHub / external links */
+.header-link { color: #586075 !important; }
+.header-link:hover { color: #1c1f2a !important; }
 
 .app {
   height: 100vh;
@@ -1475,7 +1700,7 @@ body {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #555;
+  background: #000000;
   margin-top: 5px;
   flex-shrink: 0;
 }
@@ -1718,7 +1943,7 @@ body {
 /* ===== Particle Tooltip ===== */
 .particle-tooltip {
   position: absolute;
-  background: rgba(10, 14, 24, 0.95);
+  background: rgba(255, 255, 255, 0.95);
   border: 1px solid #1e3a5f;
   border-radius: 6px;
   padding: 10px 14px;

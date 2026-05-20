@@ -54,6 +54,7 @@ export default function RangeQueryPopup({ range, chartRect, onAsk, onClose }: Pr
   const popup = (
     <div
       ref={popupRef}
+      enable-xr
       className="range-popup"
       style={{ left: `${left}px`, top: `${top}px` }}
     >

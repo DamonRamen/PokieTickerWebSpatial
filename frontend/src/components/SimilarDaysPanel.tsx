@@ -71,9 +71,9 @@ export default function SimilarDaysPanel({ symbol, date, onClose }: Props) {
       ) : error ? (
         <div className="news-empty">{error}</div>
       ) : data ? (
-        <div className="news-list">
+        <div className="news-list" enable-xr-monitor>
           {/* Target day info */}
-          <div className="sim-target-card">
+          <div enable-xr className="sim-target-card">
             <div className="sim-section-label">Target Day Features</div>
             <div className="sim-feat-grid">
               <div className="sim-feat">
@@ -100,7 +100,7 @@ export default function SimilarDaysPanel({ symbol, date, onClose }: Props) {
           </div>
 
           {/* Stats summary */}
-          <div className="sim-stats-card">
+          <div enable-xr className="sim-stats-card">
             <div className="sim-section-label">Historical Pattern ({data.stats.count} similar days)</div>
             <div className="sim-stats-grid">
               <div className="sim-stat-block">
@@ -133,7 +133,7 @@ export default function SimilarDaysPanel({ symbol, date, onClose }: Props) {
           {/* Similar days list */}
           <div className="sim-section-label" style={{ padding: '8px 4px 4px' }}>Similar Days</div>
           {data.similar_days.map((day) => (
-            <div key={day.date} className="sim-day-card">
+            <div key={day.date} enable-xr className="sim-day-card">
               <div className="sim-day-header">
                 <span className="sim-day-date">{day.date}</span>
                 <span className="sim-day-score">sim {(day.similarity * 100).toFixed(0)}%</span>

@@ -221,8 +221,8 @@ function App() {
   }
 
   return (
-    <div className="app">
-      <header className="app-header">
+    <div className="app" enable-xr-monitor>
+      <header className="app-header" enable-xr>
         <div className="header-left">
           <h1>PokieTicker</h1>
         </div>

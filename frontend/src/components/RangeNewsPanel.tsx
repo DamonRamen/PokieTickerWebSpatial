@@ -91,7 +91,7 @@ export default function RangeNewsPanel({ symbol, startDate, endDate, priceChange
       ) : !data || data.total === 0 ? (
         <div className="news-empty">No news in this range</div>
       ) : (
-        <div className="news-list">
+        <div className="news-list" enable-xr-monitor>
           {/* Bullish section */}
           {data.top_bullish.length > 0 && (
             <div className="range-news-section">
@@ -150,7 +150,7 @@ function RangeNewsCard({ item }: { item: NewsItem }) {
   const borderClass = sentiment === 'positive' ? 'card-positive' : sentiment === 'negative' ? 'card-negative' : 'card-neutral';
 
   return (
-    <div className={`news-card ${borderClass}`}>
+    <div enable-xr className={`news-card ${borderClass}`}>
       <div className="news-card-top">
         <span className={`sentiment-dot ${sentiment}`} />
         <a href={item.article_url} target="_blank" rel="noreferrer" className="news-title">

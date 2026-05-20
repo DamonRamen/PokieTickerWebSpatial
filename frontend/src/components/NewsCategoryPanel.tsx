@@ -84,6 +84,7 @@ export default function NewsCategoryPanel({ symbol, activeCategory, onCategoryCh
           return (
             <button
               key={key}
+              enable-xr
               className={`category-tag ${isActive ? 'category-tag-active' : ''}`}
               style={{
                 '--tag-color': meta.color,

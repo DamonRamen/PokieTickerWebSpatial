@@ -139,13 +139,14 @@ export default function NewsPanel({ symbol, hoveredDate, onFindSimilar, highligh
       ) : news.length === 0 ? (
         <div className="news-empty">No news for this date</div>
       ) : (
-        <div className="news-list" ref={listRef}>
+        <div className="news-list" enable-xr-monitor ref={listRef}>
           {news.map((item) => {
             const isDimmed = effectiveCategorySet != null && !effectiveCategorySet.has(item.news_id);
             return (
               <div
                 key={item.news_id}
                 data-news-id={item.news_id}
+                enable-xr
                 className={`news-card ${item.sentiment === 'positive' ? 'card-positive' : item.sentiment === 'negative' ? 'card-negative' : 'card-neutral'}${highlightedNewsId === item.news_id ? ' card-highlighted' : ''}${isDimmed ? ' card-dimmed' : ''}`}
               >
                 <div className="news-card-top">

@@ -93,17 +93,17 @@ export default function RangeAnalysisPanel({ symbol, startDate, endDate, questio
       ) : error ? (
         <div className="news-empty">{error}</div>
       ) : data ? (
-        <div className="news-list">
+        <div className="news-list" enable-xr-monitor>
           {/* Question asked */}
           {question && (
-            <div className="range-question-card">
+            <div enable-xr className="range-question-card">
               <span className="range-question-icon">?</span>
               <span className="range-question-text">{question}</span>
             </div>
           )}
 
           {/* Price summary card */}
-          <div className="range-price-card">
+          <div enable-xr className="range-price-card">
             <div className="range-dates">{data.start_date} to {data.end_date}</div>
             <div className="range-price-row">
               <span className="range-price">${data.open_price.toFixed(2)} → ${data.close_price.toFixed(2)}</span>
@@ -118,14 +118,14 @@ export default function RangeAnalysisPanel({ symbol, startDate, endDate, questio
 
           {/* Summary */}
           {data.analysis.summary && (
-            <div className="range-section">
+            <div enable-xr className="range-section">
               <p className="range-summary">{data.analysis.summary}</p>
             </div>
           )}
 
           {/* Key events */}
           {data.analysis.key_events?.length > 0 && (
-            <div className="range-section">
+            <div enable-xr className="range-section">
               <h3 className="range-section-title">Key Events</h3>
               <ul className="range-events">
                 {data.analysis.key_events.map((evt, i) => (
@@ -137,7 +137,7 @@ export default function RangeAnalysisPanel({ symbol, startDate, endDate, questio
 
           {/* Bullish factors */}
           {data.analysis.bullish_factors?.length > 0 && (
-            <div className="range-section">
+            <div enable-xr className="range-section">
               <h3 className="range-section-title">Bullish Factors</h3>
               {data.analysis.bullish_factors.map((f, i) => (
                 <div key={i} className="reason up">
@@ -149,7 +149,7 @@ export default function RangeAnalysisPanel({ symbol, startDate, endDate, questio
 
           {/* Bearish factors */}
           {data.analysis.bearish_factors?.length > 0 && (
-            <div className="range-section">
+            <div enable-xr className="range-section">
               <h3 className="range-section-title">Bearish Factors</h3>
               {data.analysis.bearish_factors.map((f, i) => (
                 <div key={i} className="reason down">
@@ -161,7 +161,7 @@ export default function RangeAnalysisPanel({ symbol, startDate, endDate, questio
 
           {/* Trend analysis */}
           {data.analysis.trend_analysis && (
-            <div className="range-section">
+            <div enable-xr className="range-section">
               <h3 className="range-section-title">Trend Analysis</h3>
               <p className="range-trend">{data.analysis.trend_analysis}</p>
             </div>

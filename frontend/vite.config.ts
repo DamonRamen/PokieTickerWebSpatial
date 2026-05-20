@@ -5,6 +5,7 @@ export default defineConfig({
   base: '/PokieTicker/',
   plugins: [react()],
   server: {
+    host: true,
     port: 7777,
     proxy: {
       '/PokieTicker/api': {

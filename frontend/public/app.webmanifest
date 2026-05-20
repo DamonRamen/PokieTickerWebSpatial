@@ -1,0 +1,30 @@
+{
+  "name": "PokieTicker",
+  "short_name": "PokieTicker",
+  "description": "Understand the why behind every price move — spatialized stock news, AI analysis, and forecasts.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0f1117",
+  "theme_color": "#0f1117",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "vite.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "xr_main_scene": {
+    "type": "window",
+    "default_size": {
+      "width": 1440,
+      "height": 900
+    },
+    "resizability": {
+      "min_width": 800,
+      "min_height": 600
+    }
+  }
+}

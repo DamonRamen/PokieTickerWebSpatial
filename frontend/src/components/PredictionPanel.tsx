@@ -362,7 +362,7 @@ function ForecastSection({
 
       {/* AI Prediction Hero */}
       {primary && (
-        <div className={`fc-hero ${isUp ? 'fc-hero-up' : 'fc-hero-down'}`}>
+        <div enable-xr className={`fc-hero ${isUp ? 'fc-hero-up' : 'fc-hero-down'}`}>
           <span className="fc-hero-arrow">{isUp ? '\u2191' : '\u2193'}</span>
           <div className="fc-hero-text">
             <span className="fc-hero-label">{label}:</span>
@@ -400,7 +400,7 @@ function ForecastSection({
             const deep = deepResults[article.news_id];
             const isAnalyzing = deepLoading === article.news_id;
             return (
-              <div key={article.news_id} className={`fc-impact-card fc-impact-${retClass}`}>
+              <div key={article.news_id} enable-xr className={`fc-impact-card fc-impact-${retClass}`}>
                 <div className="fc-impact-header">
                   <span className={`fc-impact-ret ${retClass}`}>
                     {article.ret_t0 != null ? `${article.ret_t0 >= 0 ? '+' : ''}${article.ret_t0.toFixed(2)}%` : '-'}
@@ -458,7 +458,7 @@ function ForecastSection({
       {stats.count > 0 && (
         <div className="fc-similar-section">
           <div className="fc-section-title">Similar Historical Periods ({stats.count})</div>
-          <div className="fc-similar-stats">
+          <div enable-xr className="fc-similar-stats">
             <div className="fc-stat">
               <span className="fc-stat-label">5D Up Rate</span>
               <span className={`fc-stat-value ${stats.up_ratio_5d > 0.5 ? 'up' : 'down'}`}>
@@ -485,9 +485,9 @@ function ForecastSection({
             </div>
           </div>
 
-          <div className="fc-periods-list">
+          <div className="fc-periods-list" enable-xr-monitor>
             {forecast.similar_periods.slice(0, 5).map((p, i) => (
-              <div key={i} className="fc-period-card">
+              <div key={i} enable-xr className="fc-period-card">
                 <div className="fc-period-header">
                   <span className="fc-period-dates">{p.period_start} ~ {p.period_end}</span>
                   <span className="fc-period-sim">{(p.similarity * 100).toFixed(0)}% match</span>
@@ -524,7 +524,7 @@ function PredictionCard({ label, pred }: { label: string; pred: HorizonPredictio
     : 0.01;
 
   return (
-    <div className={`fc-pred-card ${isUp ? 'up' : 'down'}`}>
+    <div enable-xr className={`fc-pred-card ${isUp ? 'up' : 'down'}`}>
       <div className="fc-pred-header">
         <span className="fc-pred-label">{label}</span>
         {/* model_type hidden — show generic "AI" label */}
