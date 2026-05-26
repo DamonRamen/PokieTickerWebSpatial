@@ -130,7 +130,7 @@ body {
 
 .ticker-panel,
 .search-dropdown {
-  --xr-back: 60px;
+  --xr-back: 30px;
   --xr-background-material: translucent;
   background: rgba(255, 255, 255, 0.96) !important;
   border-color: rgba(28, 31, 42, 0.12) !important;
