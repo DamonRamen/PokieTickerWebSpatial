@@ -227,7 +227,7 @@ export default function PredictionPanel({ symbol }: Props) {
 
   if (loading) {
     return (
-      <div className="pred-panel">
+      <div enable-xr className="pred-panel">
         <div className="pred-header" onClick={() => setExpanded(!expanded)}>
           <span className="pred-title">Forecast</span>
           <span className="pred-loading-dot" />
@@ -239,7 +239,7 @@ export default function PredictionPanel({ symbol }: Props) {
 
   if (error || (!forecast7 && !forecast30)) {
     return (
-      <div className="pred-panel">
+      <div enable-xr className="pred-panel">
         <div className="pred-header">
           <span className="pred-title">Forecast</span>
           <span className="pred-no-model">{error || 'No data'}</span>
@@ -249,7 +249,7 @@ export default function PredictionPanel({ symbol }: Props) {
   }
 
   return (
-    <div className={`pred-panel ${expanded ? 'pred-expanded' : ''}`}>
+    <div enable-xr className={`pred-panel ${expanded ? 'pred-expanded' : ''}`}>
       {/* Header bar */}
       <div className="pred-header" onClick={() => setExpanded(!expanded)}>
         <span className="pred-title">Forecast</span>

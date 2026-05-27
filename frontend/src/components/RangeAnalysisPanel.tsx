@@ -74,7 +74,7 @@ export default function RangeAnalysisPanel({ symbol, startDate, endDate, questio
 
   return (
     <div className="news-panel range-panel">
-      <div className="news-panel-header">
+      <div enable-xr className="news-panel-header">
         <h2>Range Analysis</h2>
         <button className="range-clear-btn" onClick={onClear}>Clear</button>
       </div>

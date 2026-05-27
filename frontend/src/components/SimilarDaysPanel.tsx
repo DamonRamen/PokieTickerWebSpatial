@@ -55,7 +55,7 @@ export default function SimilarDaysPanel({ symbol, date, onClose }: Props) {
 
   return (
     <div className="news-panel">
-      <div className="news-panel-header">
+      <div enable-xr className="news-panel-header">
         <h2>Similar Days</h2>
         <span className="news-date-badge">{date}</span>
         <button className="range-clear-btn" onClick={onClose}>Close</button>

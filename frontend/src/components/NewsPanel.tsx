@@ -113,7 +113,7 @@ export default function NewsPanel({ symbol, hoveredDate, onFindSimilar, highligh
   if (!displayDate) {
     return (
       <div className="news-panel">
-        <div className="news-panel-header">
+        <div enable-xr className="news-panel-header">
           <h2>News</h2>
         </div>
         <div className="news-empty">Tap on a chart dot to see news</div>
@@ -123,7 +123,7 @@ export default function NewsPanel({ symbol, hoveredDate, onFindSimilar, highligh
 
   return (
     <div className="news-panel">
-      <div className="news-panel-header">
+      <div enable-xr className="news-panel-header">
         <h2>News</h2>
         <span className="news-date-badge">{displayDate}</span>
         <span className="news-count">{news.length} articles</span>

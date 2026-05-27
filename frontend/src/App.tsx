@@ -222,7 +222,7 @@ function App() {
 
   return (
     <div className="app" enable-xr-monitor>
-      <header className="app-header" enable-xr>
+      <header className="app-header">
         <div className="header-left">
           <h1>PokieTicker</h1>
         </div>
@@ -233,12 +233,12 @@ function App() {
           onAdd={handleAddTicker}
         />
         {selectedRange ? (
-          <div className="header-ohlc">
+          <div enable-xr className="header-ohlc">
             <span className="ohlc-date">{selectedRange.startDate} ~ {selectedRange.endDate}</span>
             <span className="range-badge">Range Selected</span>
           </div>
         ) : hoveredOhlc ? (
-          <div className="header-ohlc">
+          <div enable-xr className="header-ohlc">
             <span className="ohlc-date">{hoveredOhlc.date}</span>
             <span className="ohlc-label">O</span>
             <span className="ohlc-val">${hoveredOhlc.open.toFixed(2)}</span>

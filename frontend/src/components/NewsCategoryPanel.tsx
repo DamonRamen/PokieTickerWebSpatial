@@ -76,15 +76,15 @@ export default function NewsCategoryPanel({ symbol, activeCategory, onCategoryCh
 
   return (
     <div className="news-category-wrap">
-      <div className="news-category-bar">
+      <div enable-xr className="news-category-bar">
         {keys.map((key) => {
           const cat = categories[key];
           const meta = CATEGORY_META[key] || { icon: '📌', zh: key, color: '#667eea' };
           const isActive = activeCategory === key;
           return (
             <button
-              key={key}
               enable-xr
+              key={key}
               className={`category-tag ${isActive ? 'category-tag-active' : ''}`}
               style={{
                 '--tag-color': meta.color,

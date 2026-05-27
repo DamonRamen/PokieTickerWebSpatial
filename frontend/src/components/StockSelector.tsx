@@ -110,6 +110,7 @@ export default function StockSelector({ activeTickers, selectedSymbol, onSelect,
       {/* Current ticker button — click to open dropdown */}
       <div className="ticker-dropdown-wrapper" ref={panelRef}>
         <button
+          enable-xr
           className="ticker-current"
           onClick={() => setShowPanel((v) => !v)}
         >
@@ -118,7 +119,7 @@ export default function StockSelector({ activeTickers, selectedSymbol, onSelect,
         </button>
 
         {showPanel && (
-          <div className="ticker-panel">
+          <div enable-xr className="ticker-panel">
             {renderedGroups.map((group) => (
               <div className="ticker-panel-group" key={group.label}>
                 <div className="ticker-panel-group-label">{group.label}</div>
@@ -149,7 +150,7 @@ export default function StockSelector({ activeTickers, selectedSymbol, onSelect,
           onFocus={() => results.length > 0 && setShowSearch(true)}
         />
         {showSearch && results.length > 0 && (
-          <ul className="search-dropdown">
+          <ul enable-xr className="search-dropdown">
             {results.map((t) => (
               <li key={t.symbol} onClick={() => handlePick(t)}>
                 <strong>{t.symbol}</strong> <span>{t.name}</span>

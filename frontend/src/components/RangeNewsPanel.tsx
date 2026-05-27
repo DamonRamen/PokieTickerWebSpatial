@@ -68,7 +68,7 @@ export default function RangeNewsPanel({ symbol, startDate, endDate, priceChange
 
   return (
     <div className="news-panel">
-      <div className="news-panel-header">
+      <div enable-xr className="news-panel-header">
         <h2>Range News</h2>
         <span className={`range-news-change ${isUp ? 'up' : 'down'}`}>
           {isUp ? '+' : ''}{change.toFixed(2)}%
